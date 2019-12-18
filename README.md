@@ -11,12 +11,16 @@ which makes estimated local properties more accurate.
 This code was written by [Paul Guerrero](https://paulguerrero.github.io) and [Yanir Kleiman](https://www.cs.tau.ac.il/~yanirk/),
 based on the excellent PyTorch implementation of PointNet by [Fei Xia](https://github.com/fxia22/pointnet.pytorch).
 
-This work will be presented at [Eurographics 2018](https://www.eurographics2018.nl/).
+This work was presented at [Eurographics 2018](https://www.eurographics2018.nl/).
+
+**Update 18/Oct/2018:** The code has been updated to pytorch 0.4, and an option for choosing the GPU or using CPU only has been added. The old version that is compatible with pytorch 0.3 is still available in the branch [`pytorch_0.3`](https://github.com/paulguerrero/pcpnet/tree/pytorch_0.3).
+
+**Update 21/Jun/2018:** The test dataset has been updated to include one shape that was missing to exactly reproduce the results in our paper. Thanks to Itzik Ben Shabat for pointing this out! Also note that the `--sparse_patches` option needs to be activated when running eval_pcpnet.py to exactly reproduce the results in our paper.
 
 ## Prerequisites
-* CUDA and CuDNN (changing the code to run on CPU should require few changes)
 * Python 3.6
-* PyTorch 0.3
+* PyTorch ≥ 0.4
+* CUDA and CuDNN if training on the GPU
 
 ## Setup
 Install required python packages, if they are not already installed ([tensorboardX](https://github.com/lanpa/tensorboard-pytorch) is only required for training):
@@ -79,16 +83,14 @@ The dataset is given in the format described above. To change model settings or 
 ## Citation
 If you use our work, please cite our paper:
 ```
-@article{GuerreroEtAl:PCPNet:2016,
+@article{GuerreroEtAl:PCPNet:EG:2018,
   title   = {{PCPNet}: Learning Local Shape Properties from Raw Point Clouds}, 
   author  = {Paul Guerrero and Yanir Kleiman and Maks Ovsjanikov and Niloy J. Mitra},
   year    = {2018},
-  journal = {Eurographics},
-  volume = {},
-  number = {},
-  issn = {},
-  pages = {},
-  numpages = {},
-  doi = {},
+  journal = {Computer Graphics Forum},
+  volume = {37},
+  number = {2},
+  pages = {75-85},
+  doi = {10.1111/cgf.13343},
 }
 ```
